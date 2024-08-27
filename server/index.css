@@ -27,6 +27,7 @@ footer {
 }
 
 .service {
+    cursor: pointer;
     flex: 1;
     margin: 10px;
     padding: 20px;
