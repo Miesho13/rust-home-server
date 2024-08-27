@@ -1,28 +1,13 @@
-use walkdir::WalkDir;
-use std::fs;
-
-// use std:: {
-//     io::{prelude::*, BufReader},
-//     net::{TcpListener, TcpStream},
-//     path::Path
-// };
+/*
+ * This is entry point for rust server.
+ *
+ */
+mod http_server;
 
 fn main() {
-
-    let mut path = Vec::new();
-    for entry in WalkDir::new("./server") {
-        let entry = entry.unwrap();
-        if entry.file_type().is_file() {
-            path.push(entry.path().to_path_buf());
-        }
-    }
-
-    for path in &path {
-        match path.to_str() {
-            Some(s) => println!("{}", s),
-            None => println!("none unicode path"),
-        }
-    } 
+    let server_instance = http_server::ServerContext::new("127.0.0.1:6969");
+    server_instance.run();
 }
+
 
 
