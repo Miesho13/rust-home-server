@@ -111,7 +111,7 @@ impl ServerContext {
         let length = content.len();
         let respone = 
             format!("{status_line}\r\nContent-Length: {length}\r\n\r\n{content}");    
-        
+
         stream.write_all(respone.as_bytes()).unwrap();
     }
 }
