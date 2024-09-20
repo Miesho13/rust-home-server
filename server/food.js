@@ -1,6 +1,16 @@
+const foodCtx = {
+    dishDB: [],
+    dishPick: [],
+}
+
+async function main() {
+    foodCtx.dishDB = await getJson("json_db/foods.json");
+    console.log(foodCtx.dishDB);
+    console.log(foodCtx.dishDB.find(dish => dish.name === "Tibijka"));
+}
+
 $(document).ready(function() {
     let itemCount = 0;
-
     $('#additem').click(function() {
         itemCount++;
         const newItem = $('<div></div>').addClass('listItem').text('Item ' + itemCount);
@@ -8,27 +18,20 @@ $(document).ready(function() {
     });
 });
 
-
-
-const pathToFood = "json_db/foods.json"
-async function getJson() {
+async function getJson(pathToFood) {
+    let respone;
     try {
-        const respone = await fetch(pathToFood);
+        respone = await fetch(pathToFood);
 
         if (!respone.ok) {
             throw new Error("Network respone was not ok" + respone.statusText);
         }
-        
-        const data = await respone.json();
-        console.log(data);
     }
     catch(error) {
         console.error("Theres some problem.", error);
     }
+
+    return respone.json(); 
 }
 
-getJson();
-
-
-
-
+main();
