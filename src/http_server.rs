@@ -64,9 +64,7 @@ impl ServerContext {
         for stream in self.listener.incoming() {
             let mut stream = stream.unwrap();
             let request = self.get_request(&mut stream);
-            println!("{}", request);
             let http_req = HttpRequest::new(&request);
-
             Self::handle_request(&mut stream, http_req);
         }
 
@@ -97,12 +95,13 @@ impl ServerContext {
     }
     
     fn handle_request(mut stream: &TcpStream, request: HttpRequest) { 
-        let path = format!("./server/{}",request.endpoint);
-
+        println!("[INFO] Ask for {}", request.endpoint);
+        let path = format!("./server/{}", request.endpoint);
         let mut status_line = "HTTP/1.1 200 OK";
         let content = match fs::read_to_string(path) {
             Ok(content) => content,
             Err(_) => {
+                println!("[ERROR] Path {} donst exit", request.endpoint);
                 status_line = "HTTP/1.1 404 Not Found";
                 fs::read_to_string("./server/404.html").unwrap()
             }
@@ -112,6 +111,7 @@ impl ServerContext {
         let respone = 
             format!("{status_line}\r\nContent-Length: {length}\r\n\r\n{content}");    
 
+        println!("[INFO] Send file {}", request.endpoint);
         stream.write_all(respone.as_bytes()).unwrap();
     }
 }

@@ -1,0 +1,45 @@
+#food_app {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+#picketFood {
+    width: 300px;
+    margin: 20px right;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    display: grid;
+}
+
+.listItem {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+}
+
+#avaliableFood {
+    width: 300px;
+    margin: 20px right;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+#searchFood {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#searchFood:focus {
+    border-color: #66afe9;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+    outline: none;
+}

@@ -5,23 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="food.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="food.js"></script>
+
 </head>
 <body>
     <header>
         <h1>Food</h1>
 
     </header>
-
+    
     <main>
+        <div id="menu">
+            <a href="index.html" id="home">Home</a>
+            <a href="#" id="about">New food</a>
+            <a href="#" id="contact">Downolad list</a>
+        </div>       
+
+        <div id="food_app" class="row">
+            <div id="picketFood">
+
+            </div>
+
+            <div id="avaliableFood">
+                <input id="searchFood" type="text" placeholder="Enter text here">
+            </div>
+
+        </div>
 
     </main>
-
 
 
     <footer>
         <p>©2024 Marcin Ryzewski Home Service. All rights reserved.</p>
     </footer>
 
-    <script src="food.js"></script>
 </body>
 </html>

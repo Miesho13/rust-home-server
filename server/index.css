@@ -12,6 +12,10 @@ main {
     margin: 20px;
 }
 
+.row {
+    display: flex;
+}
+
 footer {
     background-color: #f8f9fa;
     text-align: center;
@@ -33,3 +37,27 @@ footer {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+#menu {
+    background-color: #ffffff;
+    overflow: hidden;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#menu a {
+    float: left;
+    font-weight: bold;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    background-color: #ddd;
+    color: black;
+}
+

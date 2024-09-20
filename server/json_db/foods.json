@@ -1,0 +1,28 @@
+{
+   "foods": [
+       {
+            "name": "Makaronik z pesto",
+            "type": "dish",
+            "kcal": 52,
+            "carbon": 28,
+            "proteins": 14,
+            "fat": 14,
+            "product": {
+                "Ogoreczek": 1,
+                "Pomidorek": 2
+            }
+       },
+       {
+            "name": "Tibijka",
+            "type": "dish",
+            "kcal": 52,
+            "carbon": 28,
+            "proteins": 14,
+            "fat": 14,
+            "product": {
+                "Peczatka": 1,
+                "Karniszon": 2
+            } 
+       }
+   ]
+}
