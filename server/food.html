@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="food.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
     <script src="food.js"></script>
 
 </head>
@@ -24,13 +25,17 @@
         </div>       
 
         <div id="food_app" class="row">
-            <div id="picketFood">
-
-            </div>
-
             <div id="avaliableFood">
                 <input id="searchFood" type="text" placeholder="Enter text here">
+
+                <div>
+                    <ul id="sortable1" class="connectedsortable"></ul>
+                </div>
             </div>
+
+            <div id="picketFood">
+                <ul id="sortable2" class="connectedSortable"></ul>
+            </div
 
         </div>
 
